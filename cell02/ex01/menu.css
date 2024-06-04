@@ -1,0 +1,24 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    background-color: blueviolet;
+}
+
+.menu-sandwich {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.menu-sandwich div {
+    height: 10vh;
+    width: 50vw;
+    background-color: #fff;
+    margin: 0;
+    border-radius: 100px;
+}
+
+.menu-sandwich div:nth-child(2) {
+    margin: 5vh 0;
+}
