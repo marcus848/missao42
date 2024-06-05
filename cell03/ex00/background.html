@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar Cor</title>
+    <link rel="stylesheet" href="background.css">
+</head>
+<body>
+    <button onclick="mudarCor()">Click Me!</button>
+
+    <script type="text/javascript">
+        function mudarCor() {
+            let rRed = Math.floor(Math.random() * 255)
+            let rGreen = Math.floor(Math.random() * 255)
+            let rBlue = Math.floor(Math.random() * 255)
+            let nRgb = "rgb(" + rRed + ", " + rGreen + ", " + rBlue + ")" 
+            
+            document.body.style.backgroundColor = nRgb
+            
+            if ((rRed + rBlue + rGreen) <= 320) {
+                document.querySelector("button").style.color = "white"
+                document.querySelector("button").style.borderColor = "white"
+            } else {
+                document.querySelector("button").style.color = "black"
+                document.querySelector("button").style.borderColor = "black "
+            }
+            // alert(nRgb)
+        }
+    </script>
+</body>
+</html>

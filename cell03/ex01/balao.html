@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>balao</title>
+    <style>
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .balao {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="balao" onclick=""></div>
+
+    <script>
+
+        const balao = document.querySelector(".balao");
+        const colors = ["red", "green", "blue"]
+        let indexCor = 0
+
+
+        function clickBalao() {
+            let currentSize = balao.clientHeight;
+
+            balao.style.height = (currentSize + 10) + "px";
+            balao.style.width = (currentSize + 10) + "px";
+
+            indexCor = (indexCor == 2 ? 0 : indexCor + 1)
+            balao.style.backgroundColor = colors[indexCor]
+            console.log(currentSize + 10) 
+            if (currentSize + 10 > 420) {
+                balao.style.height = "200px";
+                balao.style.width = "200px";
+            }
+        }
+
+        function teste() {
+            let currentSize = balao.clientHeight
+
+            if (!(currentSize - 5 < 200)    ) {
+                
+                balao.style.height = (currentSize - 5) + "px"
+                balao.style.width = (currentSize - 5) + "px"
+            }
+            
+            indexCor = (indexCor == 0 ? 2 : indexCor - 1)
+            balao.style.backgroundColor = colors[indexCor]
+
+        }
+
+        balao.addEventListener("click", clickBalao);
+        balao.addEventListener("mouseout", teste)
+
+    </script>
+</body>
+</html>
