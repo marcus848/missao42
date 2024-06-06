@@ -28,12 +28,6 @@ body {
     color: white;
 }
 
-.nav .count-tasks{
-    font-size: 32px;
-    color: white;
-    font-weight: 900;
-}
-
 .nav button {
     display: flex;
     align-items: center;

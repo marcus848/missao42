@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mudar Cor</title>
     <link rel="stylesheet" href="background.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <button onclick="mudarCor()">Click Me!</button>
+    <button>Click Me!</button>
 
     <script type="text/javascript">
         function mudarCor() {
@@ -16,18 +17,20 @@
             let rBlue = Math.floor(Math.random() * 255)
             let nRgb = "rgb(" + rRed + ", " + rGreen + ", " + rBlue + ")" 
             
-            document.body.style.backgroundColor = nRgb
+            // document.body.style.backgroundColor = nRgb
+            $("body").css("background", nRgb)
             
             if ((rRed + rBlue + rGreen) <= 320) {
-                document.querySelector("button").style.color = "white"
-                document.querySelector("button").style.borderColor = "white"
-            } else {
-                document.querySelector("button").style.color = "black"
-                document.querySelector("button").style.borderColor = "black "
+                $("button").css("color", "white")
+                $("button").css("border-color", "white")
+           } else {
+                $("button").css("color", "black")
+                $("button").css("border-color", "black")
             }
-            // alert(nRgb)
-        }
 
+        }
+        
+        $("button").on("click", () => mudarCor())
     </script>
 </body>
 </html>

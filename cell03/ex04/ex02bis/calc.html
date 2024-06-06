@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <main class="main">
+        <div class="calculadora">
+            <div class="calculadora-container">
+                <input type="number" min="0" name="number1" id="number1">
+                <select id="operacao">
+                    <option value="mais">+</option>
+                    <option value="menos">-</option>
+                    <option value="vezes">*</option>
+                    <option value="dividir">/</option>
+                    <option value="porcentagem">%</option>
+                </select>
+                <input type="number" min="0" name="number2" id="number2">
+            </div>
+            <button id="calculadora-button">Try Me!</button>
+        </div>
+
+        <div class="popup-alert disable">
+            <p>Please, use me...</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

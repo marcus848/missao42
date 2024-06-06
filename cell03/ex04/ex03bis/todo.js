@@ -1,7 +1,6 @@
-const btNewToDo = document.querySelector(".nav button")
-const containerToDo = document.querySelector("#ft_list")
-const listToDo = document.querySelectorAll("#ft_list div")
-const countTasks = document.querySelector(".count-tasks p span")
+const btNewToDo = $(".nav button")
+const containerToDo = $("#ft_list")
+const listToDo = $("#ft_list div")
 
 // cookies 
 
@@ -30,13 +29,11 @@ function lerCookie(nome) {
 }
 
 function saveToDo() {
-    var tasks = []
-    containerToDo.querySelectorAll("div").forEach(item => {
-        tasks.push(item.querySelector('p').textContent)
-    })
-    // console.log("antes do stringify: ", tasks)
-    // const tasksString = JSON.stringify(tasks)
-    // console.log("depois do stringify: ", tasksString)
+    var tasks = [];
+    $("#ft_list div").each(function() {
+        tasks.push($(this).find('p').text());
+    });
+
     criarCookie('tasks', JSON.stringify(tasks))
 }
 
@@ -47,19 +44,21 @@ function carregarToDos() {
         tasks = JSON.parse(tasks)
         console.log("Parse: ", tasks)
         tasks.forEach(task => {
-            const newItem = document.createElement("div");
-            const newItemText = document.createElement("p");
+            // const newItem = document.createElement("div");
+            // const newItemText = document.createElement("p");
 
-            newItemText.textContent = task;
+            const newItem = $("<div />")
+            const newItemText = $("<p />")
 
-            newItem.appendChild(newItemText);
+            newItemText.text(task)
 
-            newItem.addEventListener("click", () => removeToDo(newItem));
+            newItem.append(newItemText);
 
-            document.querySelector("#ft_list").appendChild(newItem);
+            newItem.on("click", () => removeToDo(newItem));
+
+            $("#ft_list").append(newItem);
         })
     }
-
 }
 
 
@@ -69,16 +68,23 @@ function addNewToDo(newToDo) {
 
     } else if (newToDo) {
 
-        const newItem = document.createElement("div")
-        const newItemText = document.createElement("p")
+        const newItem = $("<div />")
+        const newItemText = $("<p />")
 
-        newItemText.textContent = newToDo
-        newItem.appendChild(newItemText)
-        newItem.addEventListener("click", () => removeToDo(newItem))
+        newItemText.text(newToDo)
 
-        var firstChildren = containerToDo.children[0]
-        containerToDo.insertBefore(newItem, firstChildren)
-        // containerToDo.append(newItem)
+        newItem.append(newItemText);
+
+        newItem.on("click", () => removeToDo(newItem));
+
+
+        var firstChildren = $("#ft_list").children().first();
+        if (firstChildren) {
+            newItem.insertBefore(firstChildren)
+        } else {
+            $("#ft_list").append(newItem)
+        }
+        // containerToDo.insertBefore(newItem, firstChildren)
 
         saveToDo()
     }
@@ -103,8 +109,8 @@ window.onload = function () {
 }
 
 
-listToDo.forEach((e) => {
-    e.addEventListener("click", () => removeToDo(e))
+listToDo.each(() => {
+    $(this).on("click", () => removeToDo($(this)))
 })
 
-btNewToDo.addEventListener("click", () => addNewToDo(prompt("Nova Atividade:")))
+btNewToDo.on("click", () => addNewToDo(prompt("Nova Atividade:")))

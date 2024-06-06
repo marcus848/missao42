@@ -30,6 +30,7 @@ td {
 /* padding: 10px; */
 background-color: #fff;
 }
+
 table.card tr:nth-child(n+2) td {
     padding: 12.5px;
     text-align: center;
