@@ -1,0 +1,8 @@
+- div id 'ft_list' para armazenas as tarefas - check
+- cada tarefa representada por uma div dentro da #ft_list - check
+- quando a tarefa é criada é colocada no topo da lista(Manipulação no DOM) - check
+- um botão para adicionar uma tarefa(com prompt), se não estiver vazio deve aparecer no topo da lista - check
+- remover uma tarefa ao clicar em cima
+    a janela de configuração deve pergunta se deseja ou não concluir a tarefa, caso sim a div deve ser excluida do DOM(não somente ocultada)
+- a lista deve ser salva no cookie, para permitir atualizar a pagina sem perder a lista 
+- estilos - check
