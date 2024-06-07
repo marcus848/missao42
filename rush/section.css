@@ -1,6 +1,270 @@
 section {
     height: 100vh;
     width: 100%;
-    padding-left: 80px;
+    padding-left: 180px;
+    padding-right: 130px;
+    padding-top: 50px;
+}
 
+h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #0e2238;
+    position: relative;
+    padding: 5px 0;
+    margin-bottom: 20px;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, .7);
+    bottom: 0;
+}
+h2::after {
+    content: '';
+    position: absolute;
+    width: 30%;
+    border: 3px solid #0a6eda;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 1.5px);
+}
+
+#contato {
+    padding: 3% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+
+
+.contato-container {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+}
+
+.contato-infos {
+    /* width: 29%; */
+}
+
+.contato-infos-info {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.contato-infos-info:nth-child(2) {
+    margin: 50px 0
+}
+
+.contato-infos-text {
+    display: flex;
+    flex-direction: column;
+    /* align-i: center; */
+    justify-content: center;
+}
+
+.contato-infos-text p {
+    margin: 0;
+    font-size: 24px;
+}
+
+.contato-infos-text p:nth-child(2) {
+    font-size: 14px;
+}
+
+.contato-infos-icon {
+    background-color: #007BFF;
+    border-radius: 50%;
+    font-size: 24px;
+    color: white;
+    height: 42px;
+    width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.contato-form {
+    width: 65%;
+}
+
+.contato-form form div { 
+    margin-bottom: 5px;
+}
+
+.form-nomeEmail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-nomeEmail div {
+    width: 49%;
+    /* border: 1px solid black; */
+}
+.form-nomeEmail div input {
+    width: 100%;
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    position: relative;
+}
+
+.input-total {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+}
+
+.btn-submit {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    left: 50%;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+
+#sobre {
+    padding: 3% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+
+.sobre-container {
+    /* border: 1px solid black; */
+    width: 70%;
+    display: flex;
+}
+
+.curriculo-itens {
+    width: 35%;
+}
+
+.curriculo-itens-item {
+    padding: 0 0 0 15px;
+    border-left: 2px solid #007BFF;
+    position: relative;
+}
+
+.curriculo-itens-item::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border: 2px solid #007BFF;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    transform: translate(-8px);
+    background-color: white;
+}
+
+.curriculo-itens-item h4 {
+    font-weight: 700;
+    color: #007BFF;
+
+}
+
+
+.curriculo-competencias {
+    width: 60%;
+    margin: 0 auto;
+
+}
+
+.competencia {
+    margin-bottom: 60px;
+}
+
+.nome-competencia {
+    font-weight: bold;
+}
+
+.progresso {
+    background-color: #f3f3f3;
+    border-radius: 13px;
+    padding: 3px;
+}
+
+.barra-progresso {
+    height: 20px;
+    border-radius: 10px;
+    background-color: #007bff;
+    text-align: center;
+    color: white;
+    line-height: 20px;
+    width: 0;
+}
+
+.barra-progresso.shell { width: 100%; }
+.barra-progresso.html { width: 100%; }
+.barra-progresso.css { width: 90%; }
+.barra-progresso.javascript { width: 75%; }
+
+
+
+#home{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#home img{
+    width: auto;
+    height: 430px;
+    border-radius: 15px;
+    margin-left: 15px;
+}
+
+#home div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+
+#minilista ul{
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+}
+
+#minilista li{
+    margin-top: 50px;
+}
+
+#minilista li::before{
+    content: ">";
+    color: rgb(0, 71, 177);
 }
