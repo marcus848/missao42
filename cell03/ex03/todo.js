@@ -60,6 +60,7 @@ function carregarToDos() {
         })
     }
 
+    countTasks.textContent = containerToDo.querySelectorAll("#ft_list div").length
 }
 
 
@@ -82,6 +83,9 @@ function addNewToDo(newToDo) {
 
         saveToDo()
     }
+
+
+    countTasks.textContent = containerToDo.querySelectorAll("#ft_list div").length
 }
 
 function removeToDo(event) {
@@ -96,6 +100,7 @@ function removeToDo(event) {
         event.remove();
         saveToDo();
     }
+    countTasks.textContent = containerToDo.querySelectorAll("#ft_list div").length
 }
 
 window.onload = function () {
